@@ -6,3 +6,5 @@ class Expense:
     
     def __repr__ (self):
         return f"<Expense: {self.name}, {self.category}, RM{self.amount:.2f}>sushi"
+    
+# To be continued...
