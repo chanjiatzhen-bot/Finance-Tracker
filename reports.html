@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceTracker - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="finance-app">
+    
+    <header>
+        <a href="index.html" class="logo">Finance<span>Tracker</span></a>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="reports.html" class="active">Reports</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+
+    <section class="dashboard">
+        <div class="reports-header" style="margin-bottom: 3rem;">
+            <h2 class="heading-title" style="font-size: 3rem; font-weight: 800;">Financial <span>Analysis</span></h2>
+            <p style="font-size: 1.6rem; color: #666;">Visualize your income vs expenses for the year <span id="current-year-label">2024</span></p>
+        </div>
+
+        <div class="main-grid">
+            <!-- Left Side: Pie Chart (Income vs Expense) -->
+            <div class="form-container chart-card">
+                <h3>Cash Flow Breakdown</h3>
+                <div class="canvas-container">
+                    <canvas id="incomeExpenseChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Right Side: Bar Chart (Spending Trend) -->
+            <div class="history-container chart-card">
+                <h3>Monthly Spending Trend</h3>
+                <div class="canvas-container">
+                    <canvas id="monthlyTrendChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/reports.js"></script>
+</body>
+</html>
+

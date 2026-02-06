@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceTracker - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="finance-app">
+    
+    <header>
+        <a href="index.html" class="logo">Finance<span>Tracker</span></a>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="reports.html">Reports</a>
+            <a href="settings.html" class="active">Settings</a>
+        </nav>
+    </header>
+
+       <section class="dashboard">
+        <div class="reports-header" style="margin-bottom: 3rem;">
+            <h2 class="heading-title" style="font-size: 3rem; font-weight: 800;">App <span>Settings</span></h2>
+            <p style="font-size: 1.6rem; color: #666;">Configure your profile and manage your financial data.</p>
+        </div>
+
+        <div class="main-grid">
+            <!-- Left Side: Profile & Preferences -->
+            <div class="form-container">
+                <h3>Account Profile</h3>
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="user-name" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label>Base Currency</label>
+                    <select id="currency-select" class="custom-select">
+                        <option value="RM">Malaysian Ringgit (RM)</option>
+                        <option value="$">US Dollar ($)</option>
+                        <option value="£">British Pound (£)</option>
+                        <option value="AUD">Australian Dollar (AUD)</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="saveSettings()">Save Changes</button>
+            </div>
+
+            <!-- Right Side: Data Management -->
+            <div class="history-container">
+                <h3>Data Management</h3>
+                <p style="font-size: 1.4rem; color: #666; margin-bottom: 2rem;">Manage how your transactions are stored and handled.</p>
+                
+                <div class="settings-action">
+                    <div class="action-text">
+                        <h4>Backup Data</h4>
+                        <p>Download all your transactions as a JSON file.</p>
+                    </div>
+                    <button class="btn btn-outline" onclick="exportData()"><i class="fa-solid fa-download"></i> Export</button>
+                </div>
+
+                <div class="settings-action danger-zone">
+                    <div class="action-text">
+                        <h4>Reset All Data</h4>
+                        <p>Permanently delete all transaction history. This cannot be undone.</p>
+                    </div>
+                    <button class="btn btn-danger" onclick="clearAllData()"><i class="fa-solid fa-trash"></i> Delete All</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceTracker - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="finance-app">
+    
+    <header>
+        <a href="index.html" class="logo">Finance<span>Tracker</span></a>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="transactions.html" class="active">Transactions</a>
+            <a href="reports.html">Reports</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+
+<section class="dashboard">
+        <div class="history-container full-width-container">
+            <div class="history-header">
+                <h3>Full Transaction History</h3>
+                
+                <!-- Search and Advanced Filters -->
+                <div class="filter-group">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search-input" placeholder="Search description...">
+                    </div>
+                    <select id="month-filter">
+                        <option value="all">All Months</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <input type="number" id="year-filter" placeholder="Year" value="2024">
+                </div>
+            </div>
+
+            <!-- Detailed List Header (Desktop Only) -->
+            <div class="table-header-labels">
+                <span>Description & Date</span>
+                <span>Category</span>
+                <span>Amount</span>
+            </div>
+
+            <ul id="full-list" class="list detailed-list">
+                <!-- Transactions injected by JS -->
+            </ul>
+
+            <!-- Summary of the filtered view -->
+            <div class="view-footer">
+                <p>Showing <span id="item-count">0</span> transactions</p>
+                <h3>Total: <span id="view-total">RM 0.00</span></h3>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/transactions.js"></script>
+</body>
+</html>
